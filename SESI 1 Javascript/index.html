@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek nilai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cek nilai</h1>
+        <div class="form">
+            <input placeholder="Masukkan nilai" id="nilai" type="number">
+            <button onclick="cekNilai()">OK</button>
+        </div>
+    </div>
+    <script>
+        function cekNilai() {
+            let nilai = document.getElementById("nilai").value;
+            
+            nilai = Number(nilai);
+
+            if (nilai > 100) {
+                alert("data invalid");
+            }
+            else if (nilai >= 80) {
+                alert ("anda lulus");
+            } else {
+                alert ("anda remedial");
+            }
+        }
+    </script>
+</body>
+</html>
