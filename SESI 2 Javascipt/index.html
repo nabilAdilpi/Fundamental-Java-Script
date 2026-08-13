@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin-top: 30vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        :root {
+            --bg-color: white;
+            --tx-color: black;
+            --con-color: rgb(156, 156, 156);
+            --hover: #7a7a7a;
+        }
+
+        @media(prefers-color-scheme: dark) {
+            :root {
+                --bg-color: black;
+                --tx-color: white;
+                --con-color: rgb(213, 213, 213);
+                --hover: #555555;
+            }
+        }
+
+        #notif {
+            height: 15px;
+            margin-top: 10px;
+            font-size: 12px;
+            text-align: center;
+            color: var(--tx-color);
+        }
+
+        .container {
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            display: grid;
+        }
+
+        button {
+            height: 40px;
+            width: 100px;
+            margin-top: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 20px;
+            background-color: var(--con-color);
+            color: var(--tx-color);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: var(--hover);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="pic_bulboff.gif" id="saklar">
+        <button onclick="modeOn()">ON</button>
+        <button onclick="modeOff()">OFF</button>
+    </div>
+    <p id="notif"></p>
+    <script>
+        let saklar = document.getElementById("saklar");
+        let notif = document.getElementById("notif");
+        let timer = null;
+
+        function modeOn() {
+            clearTimeout(timer);
+
+            saklar.src = "pic_bulbon.gif";
+
+            notif.innerHTML = "Lampu dinyalakan";
+
+            timer = setTimeout(function () {
+                notif.innerHTML = "";
+            }, 2500);
+        };
+
+        function modeOff() {
+            clearTimeout(timer);
+
+            saklar.src = "pic_bulboff.gif";
+
+            notif.innerHTML = "Lampu dimatikan";
+
+            timer = setTimeout(function () {
+                notif.innerHTML = "";
+            }, 2500);
+        };
+    </script>
+</body>
+
+</html>
