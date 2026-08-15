@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Cek Nilai</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f1ea;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            padding: 16px;
+        }
+
+        .container {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: clamp(24px, 6vw, 40px) clamp(20px, 5vw, 32px);
+            width: 100%;
+            max-width: 380px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(14px, 3vw, 20px);
+            height: 300px;
+        }
+
+        .container h2 {
+            margin-top: 40px;
+            align-self: center;
+            color: #2b2b2b;
+            font-size: clamp(19px, 5vw, 24px);
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .form-area {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(10px, 2.5vw, 14px);
+            width: 100%;
+        }
+
+        .form-area input {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            /* min 16px agar iOS Safari tidak auto-zoom saat fokus */
+            outline: none;
+            
+            transition: border-color 0.2s;
+        }
+
+        .form-area input:focus {
+            border-color: blue;
+        }
+
+        .form-area button {
+            width: 100%;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 8px;
+            background: blue;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            min-height: 44px;
+            /* target sentuh minimal untuk mobile */
+        }
+
+        .form-area button:hover {
+            background: #3f7cc2;
+        }
+
+        .form-area button:active {
+            background: #3f7cc2;
+        }
+
+        @media (max-width: 360px) {
+            .container {
+                max-width: 100%;
+                border-radius: 12px;
+            }
+        }
+
+        @media (max-height: 480px) and (orientation: landscape) {
+            body {
+                align-items: flex-start;
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+        }
+
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Cek Nilai</h2>
+        <div class="form-area">
+            <input type="text" placeholder="Masukkan nilai">
+            <button onclick="jumpscare()">Kirim</button>
+
+            <div id="overlay">
+                <img src="jumpscare.jpg" style="width:100%; height:80%; object-fit:cover;">
+                <audio id="scare" preload="auto" src="Jumpscare Sound Effect.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function jumpscare() {
+            document.getElementById('overlay').style.display = 'flex';
+            const sound = document.getElementById('scare');
+            sound.volume = 1.0;
+            sound.currentTime = 0;
+            sound.play();
+        }
+    </script>
+</body>
+
+</html>
