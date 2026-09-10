@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum Pendaftaran</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h3>Formulir Pendaftaran Mahasiswa</h3>
+            <p>Silahkan isi formulir berikut dengan benar</p>
+            <div class="formulir">
+                <b>Data Pribadi</b>
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan Nama Lengkap">
+                <label>NIM</label>
+                <input type="number" placeholder="Masukkan NIM">
+                <label>Email</label>
+                <input type="email" placeholder="contoh@gmail.com">
+                <label>Password</label>
+                <input type="password" placeholder="Masukkan Password">
+                <label>Tanggal Lahir</label>
+                <input type="date">
+                <label>Jenis Kelamin</label>
+                <div class="jk">
+                    <input type="radio" name="jk">
+                    <label>Laki-Laki</label>
+                    <input type="radio" name="jk">
+                    <label>Perempuan</label>
+                </div>
+                <b>Data Akademik</b>
+                <label>Program Studi</label>
+                <select>
+                    <option value="">-- Pilih Program Studi --</option>
+                    <option value="ps">Teknik Elektronika</option>
+                    <option value="ps">Teknik Mesin Manufaktur</option>
+                    <option value="ps">Teknologi Rekayasa Perangkat Lunak</option>
+                </select>
+                <label>Semester</label>
+                <select>
+                    <option value="">-- Pilih Semester --</option>
+                    <option value="ps">1</option>
+                    <option value="ps">2</option>
+                    <option value="ps">3</option>
+                    <option value="ps">4</option>
+                    <option value="ps">5</option>
+                    <option value="ps">6</option>
+                    <option value="ps">7</option>
+                    <option value="ps">8</option>
+                </select>
+                <label>Hobi</label>
+                <div class="jk">
+                    <input type="checkbox" name="jk">
+                    <label>Vibe Coding</label>
+                    <input type="checkbox" name="jk">
+                    <label>Bongkar Motor Gabisa Masang</label>
+                </div>
+                <b>Informasi Tambahan</b>
+                <label>Alamat</label>
+                <textarea type="text" name="" class="alamat" placeholder="Masukkan alamat lengkap"></textarea>
+                <div class="output">
+                    <button>Kirim</button>
+                    <button>Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
