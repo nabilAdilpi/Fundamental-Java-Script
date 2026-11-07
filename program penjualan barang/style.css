@@ -1,0 +1,52 @@
+body {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+table {
+    background-color: aliceblue;
+    padding: 50px;
+    margin: 20px auto;
+    box-shadow: 0 0 2px 0 black;
+    border-radius: 10px;
+}
+
+input[type="text"],
+[type="number"] {
+    height: 3.5vh;
+    width: 100%;
+    border-radius: 7px;
+    border: 1px solid black;
+}
+
+.garis-tengah {
+    border-top: 2px solid black;
+}
+
+td {
+    text-align: left;
+}
+
+.btn {
+    background-color: rgb(73, 115, 255);
+    padding: 10px 60px;
+    margin: 10px;
+    color: white;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgb(0, 51, 147);
+}
+
+select {
+    width: 102%;
+    border-radius: 10px;
+    height: 4vh;
+}
